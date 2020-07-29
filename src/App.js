@@ -85,7 +85,7 @@ function App() {
                     <p className="days">Fri</p>
                 </Col>
                 <Col>
-                    <p className="days">Sat</p>>
+                    <p className="days">Sat</p>
                 </Col>
             </Row>
         </Container>
