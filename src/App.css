@@ -21,8 +21,8 @@ a {
 .clock {
     text-align: center;
     height: 12em;
-    width: 100%;
-    line-height: 8em;
+    /*width: 100%;*/
+    /*line-height: 8em;*/
     font-family: 'clockFont', sans-serif;
 }
 

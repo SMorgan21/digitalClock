@@ -7,51 +7,22 @@ function App() {
 
     //Creating a date instance
     const date = new Date();
-    //
-    // function today() {
-    //     let weekday = new Array(7);
-    //     weekday[0] = "Sun";
-    //     weekday[1] = "Mon";
-    //     weekday[2] = "Tue";
-    //     weekday[3] = "Wed";
-    //     weekday[4] = "Thurs";
-    //     weekday[5] = "Fri";
-    //     weekday[6] = "Sat";
-    //     return weekday[date.getDay()]
-    // }
-    //
-    // const todayis = today();
-    //
-    // const weekDays = ['Sun ', 'Mon ', 'Tue ', 'Wed ', 'Thurs ', 'Fri ']
-    //
-    // function activeDay(today, weekDay) {
-    //     console.log(today);
-    //     console.log(weekDay);
-    //     if (today === weekDay) {
-    //         console.log('plop')
-    //     } else {
-    //         console.log(
-    //             'fuck off'
-    //         )
-    //     }
-    // }
-    //
-    // activeDay(todayis, weekDays);
 
-    function colorToday() {
+    function highlightToday() {
+        //counting how many p elements we have with the class days
         const dayContainers = Array.prototype.slice.call(document.querySelectorAll('p.days'), 0),
-            days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-        adate = new Date();
+            // creating an array of weekdays
+            days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
+        //for every p element that has the class days we find the one with today's day match it against the array and add an active class
         dayContainers.forEach(function (d, i) {
-            console.log(adate);
-            if (d.textContent.trim() === days[adate]) {
-                d.parentNode.classList.add('activeDay');
+             if (d.textContent.trim() === days[date.getDay()]) {
+                d.classList.add('activeDay');
             }
         });
     }
 
-    colorToday();
+    highlightToday();
 
     //Setting the time to a 12hr clock with seconds
     const now = date.toLocaleString('en-Uk', {hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true})
@@ -85,7 +56,7 @@ function App() {
                     <p className="days">Fri</p>
                 </Col>
                 <Col>
-                    <p className="days">Saturday</p>
+                    <p className="days">Sat</p>
                 </Col>
             </Row>
         </Container>
