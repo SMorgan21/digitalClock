@@ -16,17 +16,15 @@ function App() {
 
         //for every p element that has the class days we find the one with today's day match it against the array and add an active class
         dayContainers.forEach(function (d, i) {
-             if (d.textContent.trim() === days[date.getDay()]) {
+            if (d.textContent.trim() === days[date.getDay()]) {
                 d.classList.add('activeDay');
             }
         });
     }
-
     highlightToday();
-
     //Setting the time to a 12hr clock with seconds
     const now = date.toLocaleString('en-Uk', {hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true})
-
+    
     return (
         <Container fluid>
             <Row id="root" className="clock">
@@ -36,7 +34,7 @@ function App() {
                     </Col>
                 </div>
             </Row>
-            <Row className="daysHolder clock">
+            <Row className="daysHolder">
                 <Col>
                     <p className="days">Sun</p>
                 </Col>
